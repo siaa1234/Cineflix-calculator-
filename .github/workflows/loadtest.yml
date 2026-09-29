@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       target_url:
-        description: 'https://www.laksidu.site'
+        description: 'https://laksidu.site'
         required: true
-        default: 'https://www.laksidu.site'
+        default: 'https://laksidu.site'
       total_requests:
         description: 'Total number of requests'
         required: true
