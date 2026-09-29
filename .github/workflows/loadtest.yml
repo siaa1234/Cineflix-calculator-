@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       target_url:
-        description: 'https://laksidu.site'
+        description: 'https://hansaka2008.github.io/Cinemax/'
         required: true
-        default: 'https://laksidu.site'
+        default: 'https://hansaka2008.github.io/Cinemax/'
       total_requests:
         description: 'Total number of requests'
         required: true
