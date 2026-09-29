@@ -1,0 +1,22 @@
+name: Load Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: 'Target site URL'
+        required: true
+        default: 'https://www.laksidu.site'
+
+jobs:
+  loadtest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install hey
+        run: |
+          go install github.com/rakyll/hey@latest
+          echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
+
+      - name: Run load test (100 requests, 100 concurrent)
+        run: |
+          hey -n 100 -c 100 -t 60 "${{ github.event.inputs.target_url }}"
